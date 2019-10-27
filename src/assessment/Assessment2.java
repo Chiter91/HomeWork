@@ -16,11 +16,11 @@ public class Assessment2 {
             for (int j = i;j > 0; j/=10) {
                 if (j % 10 == 4 || j % 100 == 13) {
                     count++;
-                    System.out.print(i + " ");    //выодим все числа содержащие несчастливые чисел
+                    System.out.print(i + " ");    //выодим все номера содержащие несчастливые числа
                     break;
                 }
             }
         }
-        System.out.println("\n" + count);    //выводим сумму несчастливых чисел
+        System.out.println("\n" + count);    //выводим сумму несчастливых номеров
     }
 }
