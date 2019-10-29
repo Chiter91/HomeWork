@@ -35,9 +35,9 @@ public class Assessment1 {
         week = random / 60 / 60 / 24 / 7;
 
         if ((hour1 % 100 / 10) == 1)            //определяем предпоследнюю цифру, если == 1, то окончание "часов"
-            System.out.print(minute + " часов ");
+            System.out.print(hour1 + " часов ");
         else                                     //иначе смотрим по последней цифре
-            switch (hour1) {
+            switch (hour1 % 10) {
                 case 1:
                     System.out.print(hour1 + " час ");
                     break;
