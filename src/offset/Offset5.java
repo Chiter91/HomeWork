@@ -7,6 +7,7 @@ package offset;
 
 public class Offset5 {
     public static void main(String[] args) {
+        byte count = 0;
         int hour[][] = new int[24][2];
         int minute[][] = new int[60][2];
 
@@ -26,10 +27,11 @@ public class Offset5 {
             for (int j = 0; j<minute.length; j++) {
                 int x = 0;
                 if (hour [i][x] == minute[j][x+1] && hour[i][x+1] == minute[j][x]) {
-                    System.out.println("" + hour[i][x] + hour[i][x+1] + " : " + minute [j][x] + minute[j][x+1]);
+                    count +=1;
                     break;      //если нашли симметрию то выходим из вложенного цикла для экономии времени
                 }
             }
         }
+        System.out.print(count);
     }
 }
