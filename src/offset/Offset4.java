@@ -21,6 +21,6 @@ public class Offset4 {
             }
             result = true;
         }
-        System.out.println(number + (result ? " - простое число" : " - составное число"));
+        System.out.println(number + (result ? " - является простым числом" : " - НЕ является простым числом"));
     }
 }
