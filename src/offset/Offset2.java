@@ -25,7 +25,7 @@ public class Offset2 {
         boolean lofty = true;
         int quantityDay;
 
-        if (year % 2 != 0 || (year % 100 == 0 && year % 400 != 0))  //проверяем на высокосный год
+        if (year % 4 != 0 || (year % 100 == 0 && year % 400 != 0))  //проверяем на высокосный год
             lofty = false;
 
         if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) //определяем количество дней в месяце
