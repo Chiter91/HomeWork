@@ -21,6 +21,6 @@ public class Assessment2 {
                 }
             }
         }
-        System.out.println("\n" + count);    //выводим сумму несчастливых номеров
+        System.out.println(count);    //выводим сумму несчастливых номеров
     }
 }
