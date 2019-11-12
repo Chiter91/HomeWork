@@ -23,6 +23,7 @@ package assessment;
 public class Assessment1 {
     public static void main(String[] args) {
         int week, day, hour1, hour2, minute, second;
+        boolean zero = false;
 
         int random = (int) (Math.random() * (6_073_260 + 1));   //генерим кол-во секунд, макс - 10 недель
         System.out.println(random);                             //выводим полученное число
@@ -38,6 +39,9 @@ public class Assessment1 {
             System.out.print(hour1 + " часов ");
         else                                     //иначе смотрим по последней цифре
             switch (hour1 % 10) {
+                case 0:
+                    zero = true;
+                    break;
                 case 1:
                     System.out.print(hour1 + " час ");
                     break;
@@ -50,6 +54,9 @@ public class Assessment1 {
                     System.out.print(hour1 + " часов ");
             }
 
+        if (!(minute % 10 == 0 && zero))
+            zero = false;
+
         if ((minute % 100 / 10) == 1)            //определяем предпоследнюю цифру, если == 1, то окончание "минут"
             System.out.print(minute + " минут ");
         else                                     //иначе смотрим по последней цифре
@@ -63,8 +70,13 @@ public class Assessment1 {
                     System.out.print(minute + " минуты ");
                     break;
                 default:
+                    if (zero)
+                        break;
                     System.out.print(minute + " минут ");
             }
+
+        if (!(second % 10 == 0 && zero))
+            zero = false;
 
         if ((second % 100 / 10) == 1)           //определяем предпоследнюю цифру, если == 1, то окончание "секунд"
             System.out.print(second + " секунд");
@@ -79,12 +91,17 @@ public class Assessment1 {
                     System.out.print(second + " секунды");
                     break;
                 default:
+                    if (zero)
+                        break;
                     System.out.print(second + " секунд");
             }
 
         System.out.print("\n");
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         switch (week) {
+            case 0:
+                zero = true;
+                break;
             case 1:
                 System.out.print(week + " неделя ");
                 break;
@@ -97,10 +114,18 @@ public class Assessment1 {
                 System.out.print(week + " недель ");
         }
 
+        if (!(day == 0 && zero))
+            zero = false;
+
         if (day == 1)
             System.out.print(day + " сутки ");
         else
+            if (zero) {}
+        else
             System.out.print(day + " суток ");
+
+        if (!(hour2 == 0 && zero))
+            zero = false;
 
         switch (hour2) {
             case 1:
@@ -112,8 +137,13 @@ public class Assessment1 {
                 System.out.print(hour2 + " часа ");
                 break;
             default:
+                if (zero)
+                    break;
                 System.out.print(hour2 + " часов ");
         }
+
+        if (!(minute % 10 == 0 && zero))
+            zero = false;
 
         if ((minute % 100 / 10) == 1)            //определяем предпоследнюю цифру, если == 1, то окончание "минут"
             System.out.print(minute + " минут ");
@@ -128,8 +158,13 @@ public class Assessment1 {
                     System.out.print(minute + " минуты ");
                     break;
                 default:
+                    if (minute == 0 && zero)
+                        break;
                     System.out.print(minute + " минут ");
             }
+
+        if (!(second % 10 == 0 && zero))
+            zero = false;
 
         if ((second % 100 / 10) == 1)           //определяем предпоследнюю цифру, если == 1, то окончание "секунд"
             System.out.print(second + " секунд");
@@ -144,6 +179,8 @@ public class Assessment1 {
                     System.out.print(second + " секунды");
                     break;
                 default:
+                    if (second % 10 == 0 && zero)
+                        break;
                     System.out.print(second + " секунд");
             }
     }
