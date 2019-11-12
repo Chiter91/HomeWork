@@ -22,7 +22,7 @@ public class Assessment5 {
     public static void main(String[] args) {
         int count = 0;
         char ch;
-        String s = "   Listen    to    the news from today and read the text at the same time. Listen to the news from today without reading the text.";
+        String s = "   Listen10   10    to  1  the news from today and read the text at the same time. Listen to the news from today without reading the text.";
         s = s.trim();
         boolean uniquely;
         boolean temp = false;
@@ -41,7 +41,7 @@ public class Assessment5 {
 
             for(int j = 0; j < stringArray[i].length(); j++) {        //удаляем все знаки препинания
                 ch = stringArray[i].charAt(j);
-                if (!(ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z')) {
+                if (!(ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z' || ch >= '0' && ch <= '9')) {
                     sbArray[i].delete(j, sbArray[i].length());
                     break;
                 }
