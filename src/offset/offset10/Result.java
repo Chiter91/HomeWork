@@ -43,7 +43,7 @@ public class Result {
 enum Operation {
     ADD ("добавления элементов"),
     REMOVE ("удаления элементов"),
-    Contains ("поиск элементов");
+    CONTAINS("поиск элементов");
 
     private String displayName;
 

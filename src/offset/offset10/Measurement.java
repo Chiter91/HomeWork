@@ -36,7 +36,7 @@ class Measurement {
             c.contains(i + "");
         }
         time = (int) (System.currentTimeMillis() - start);
-        Result.getList().add(new Result(tc, dc, elementCount, Operation.Contains, time));
+        Result.getList().add(new Result(tc, dc, elementCount, Operation.CONTAINS, time));
     }
 
     private void measureRemove() {
