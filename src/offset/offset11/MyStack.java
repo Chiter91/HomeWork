@@ -15,10 +15,7 @@ public class MyStack extends Stack<Integer> {
     }
 
     public void push (int i) {
-        if (super.isEmpty()) {
-            max.push(i);
-        } else
-            if (i >= max()) {
+        if (i >= max()) {
             max.push(i);
         }
         super.push(i);
@@ -26,43 +23,39 @@ public class MyStack extends Stack<Integer> {
 
     public Integer pop() {
         if (super.isEmpty()) {
-            System.err.println("Очередь пустая");
             return 0;
-        }else {
-
+        } else {
             int i = super.pop();
 
-            if (i == max() && !(super.isEmpty())) {
+            if (i == max()) {
                 max.pop();
                 return i;
-            } else {
-                max.pop();
+            } else
                 return 0;
-            }
         }
     }
 
     private int max() {
         if (max.isEmpty()) {
-            System.err.println("Очередь пустая");
             return 0;
         } else {
             return max.peek();
         }
     }
 
-    public static void main(String[] args) {
-        MyStack myStack = new MyStack();
-        myStack.push(10);
-        myStack.push( 9 );
-        myStack.push( 10 );
-        myStack.push( 15 );
-        myStack.push( 1 );
-        myStack.push( 9 );
-        myStack.push( 7 );
-        System.out.println("Максимальный элемент у очереди " + myStack.toString() + " = " +myStack.max());
-        myStack.pop();
-        System.out.println(myStack.max.peek());
-        System.out.println("Максимальный элемент у очереди " + myStack.toString() + " = " +myStack.max());
-    }
+//    public static void main(String[] args) {
+//        MyStack myStack = new MyStack();
+//        myStack.push(10);
+//        myStack.push( 9 );
+//        myStack.push( 10 );
+//        myStack.push( 15 );
+//        myStack.push( 1 );
+//        myStack.push( 9 );
+//        myStack.push( 7 );
+//        myStack.push( 16 );
+//        System.out.println("Максимальный элемент у очереди " + myStack.toString() + " = " +myStack.max());
+//        myStack.pop();
+//        System.out.println(myStack.max.peek());
+//        System.out.println("Максимальный элемент у очереди " + myStack.toString() + " = " +myStack.max());
+//    }
 }
