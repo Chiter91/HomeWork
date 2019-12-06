@@ -15,7 +15,9 @@ public class IOFiles {
     public static void main(String[] args) {
         //Создаем два файла
         for (int i = 1; i <= 2; i++) {
-            try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/assessment/assessment9/in" + i + ".txt"))) {
+            try (BufferedWriter bw = new BufferedWriter(
+                    new FileWriter(
+                            "src/assessment/assessment9/in" + i + ".txt"))) {
                 for (int j = 1; j<= 1000; j++) {
 
                     int number = (int) (Math.random() * 100000) + 1;
@@ -30,7 +32,9 @@ public class IOFiles {
         List<Integer> list = new ArrayList<>();
         //Считываем числа из файлов и записываем в коллекцию
         for (int i = 1; i <= 2; i++) {
-            try (BufferedReader br1 = new BufferedReader(new FileReader("src/assessment/assessment9/in" + i + ".txt"))) {
+            try (BufferedReader br1 = new BufferedReader(
+                    new FileReader(
+                            "src/assessment/assessment9/in" + i + ".txt"))) {
                 String s;
                 while ((s = br1.readLine()) != null) {
                     Integer number = Integer.parseInt(s);
@@ -43,7 +47,9 @@ public class IOFiles {
         //Сортируем коллекцию
         Collections.sort(list);
         //Записываем отсортированные данные в файл
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/assessment/assessment9/out.txt"))) {
+        try (BufferedWriter bw = new BufferedWriter(
+                new FileWriter(
+                        "src/assessment/assessment9/out.txt"))) {
             for(int i : list) {
                 bw.write(String.valueOf(i));
                 bw.write(System.lineSeparator());
