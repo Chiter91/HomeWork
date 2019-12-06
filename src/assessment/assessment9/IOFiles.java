@@ -32,11 +32,11 @@ public class IOFiles {
         List<Integer> list = new ArrayList<>();
         //Считываем числа из файлов и записываем в коллекцию
         for (int i = 1; i <= 2; i++) {
-            try (BufferedReader br1 = new BufferedReader(
+            try (BufferedReader br = new BufferedReader(
                     new FileReader(
                             "src/assessment/assessment9/in" + i + ".txt"))) {
                 String s;
-                while ((s = br1.readLine()) != null) {
+                while ((s = br.readLine()) != null) {
                     Integer number = Integer.parseInt(s);
                     list.add(number);
                 }
