@@ -20,6 +20,18 @@ public class MainClass {
         Orchid o2 = new Orchid(20, 33, "RED");
         Tulip t1 = new Tulip(5, 5.11, "VIOLET");
 
-        Print.printToConsole();
+        System.out.println("Букет состоит из:");
+
+        for(Flowers i : Bouquet.bouquetList) {
+            System.out.println(i);
+        }
+
+        System.out.println();
+
+        System.out.println("Стоимость букета: " + Bouquet.totalCount());
+
+        System.out.println("Все цвета используемые в букете:" + Bouquet.getAllColor());
+
+        System.out.println("Букет полностью завянет через: " + Bouquet.lifeSpan() + " дней");
     }
 }

@@ -11,8 +11,8 @@ public class Flowers {
         this.cost = cost;
         this.color = Color.valueOf(color);
 
-        Logic.bouquet.add(this);
-        Logic.allColor.add(this.color);
+        Bouquet.bouquetList.add(this);
+        Bouquet.allColor.add(this.color);
     }
 
     public double getCost() {
@@ -28,17 +28,27 @@ public class Flowers {
         return "Цветок " + this.getClass().getSimpleName() +
                 " {срок жизни: " + lifeDay + " дней" +
                 ", стоимость: " + cost + " рублей" +
-                ", цвет: " + color +
+                ", цвет: " + color.getColor() +
                 '}';
     }
 }
 
 enum Color {
 
-    RED,
-    ORANGE,
-    YELLOW,
-    GREEN,
-    BLUE,
-    VIOLET,
+    RED ("Красный"),
+    ORANGE ("Оранжевый"),
+    YELLOW ("Желтый"),
+    GREEN ("Зеленый"),
+    BLUE ("Синий"),
+    VIOLET ("Фиолетовый");
+
+    private String color;
+
+    Color(String color) {
+        this.color = color;
+    }
+
+    public String getColor() {
+        return color;
+    }
 }
