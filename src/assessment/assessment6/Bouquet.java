@@ -2,29 +2,40 @@ package assessment.assessment6;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Bouquet {
-    public static ArrayList<Flowers> bouquetList = new ArrayList<>();
-    public static Set<Color> allColor = new HashSet<>();
 
-    public static String getAllColor() {
+    private List<Flowers> listBouquet = new ArrayList<>();
+    private Set<Color> listAllColor = new HashSet<>();
+
+    public void add (Flowers flowers) {
+        listBouquet.add(flowers);
+        listAllColor.add(flowers.getColor());
+    }
+
+    public List<Flowers> getListBouquet () {
+        return listBouquet;
+    }
+
+    public String getAllColor() {
         StringBuilder result = new StringBuilder();
-        for(Color i : allColor)
+        for(Color i : listAllColor)
             result.append(" ").append(i.getColor());
         return result.toString();
     }
 
-    public static double totalCount () {
+    public double totalCount () {
         double result = 0;
-        for (Flowers i : bouquetList)
+        for (Flowers i : listBouquet)
             result += i.getCost();
         return result;
     }
 
-    public static int lifeSpan () {
+    public int lifeSpan () {
         int result = 0;
-        for(Flowers i : bouquetList) {
+        for(Flowers i : listBouquet) {
             if(result < i.getLifeDay())
                 result = i.getLifeDay();
         }

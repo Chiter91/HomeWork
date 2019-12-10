@@ -13,25 +13,28 @@ package assessment.assessment6;
 
 public class MainClass {
     public static void main(String[] args) {
-        Clove clove1 = new Clove (5, 15, "BLUE");
-        Lily l1 = new Lily(6, 5.5, "RED");
-        Rose r1 = new Rose(10, 20, "BLUE");
-        Orchid o1 = new Orchid(20, 30.5, "GREEN");
-        Orchid o2 = new Orchid(20, 33, "RED");
-        Tulip t1 = new Tulip(5, 5.11, "VIOLET");
+
+        Bouquet b1 = new Bouquet();
+
+        b1.add(new Clove (5, 15, "BLUE"));
+        b1.add(new Lily(6, 5.5, "RED"));
+        b1.add(new Rose(10, 20, "BLUE"));
+        b1.add(new Orchid(20, 30.5, "GREEN"));
+        b1.add(new Orchid(20, 33, "RED"));
+        b1.add(new Tulip(5, 5.11, "VIOLET"));
 
         System.out.println("Букет состоит из:");
 
-        for(Flowers i : Bouquet.bouquetList) {
+        for(Flowers i : b1.getListBouquet()) {
             System.out.println(i);
         }
 
         System.out.println();
 
-        System.out.println("Стоимость букета: " + Bouquet.totalCount());
+        System.out.println("Стоимость букета: " + b1.totalCount());
 
-        System.out.println("Все цвета используемые в букете:" + Bouquet.getAllColor());
+        System.out.println("Все цвета используемые в букете:" + b1.getAllColor());
 
-        System.out.println("Букет полностью завянет через: " + Bouquet.lifeSpan() + " дней");
+        System.out.println("Букет полностью завянет через: " + b1.lifeSpan() + " дней");
     }
 }
